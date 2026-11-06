@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/BaseLayout.astro';
+import {href} from '../../utils/paths';
+---
+<Layout title="Hospital 3D — revisão técnica" intro="Exploração do modelo original e inspeção técnica de malhas. Sem setores clínicos identificados." hospital>
+<section class="shell viewer-page"><p class="eyebrow">Modelo original / Inspeção arquitetônica</p><h1>Um novo olhar para o hospital.</h1><p>Visualizador em revisão. Os nomes das malhas são técnicos, não representam setores confirmados. A Jornada do Paciente ainda não está implementada.</p>
+<div id="hospital-viewer" data-model-url={href('models/hospital.glb')}>
+<div class="viewport"><div id="hospital-canvas" role="region" aria-label="Modelo 3D: arraste para girar, use a roda para zoom e o botão direito para movimentar"></div><div class="viewer-overlay" aria-live="polite"><p id="model-status" role="status">Preparando visualização…</p><progress id="model-progress" aria-label="Carregamento do modelo"></progress><button id="model-retry" type="button" hidden>Tentar novamente</button></div></div>
+<aside class="inspector"><h2>Inspeção das malhas</h2><p id="mesh-info" aria-live="polite">Selecione uma malha pelo modelo ou pela lista.</p><label for="mesh-list">Objetos técnicos</label><select id="mesh-list" size="7" aria-describedby="mesh-info" disabled><option value="">Aguardando modelo</option></select><button id="model-reset" type="button" disabled>Restaurar visão inicial</button><button id="model-clear" type="button" disabled>Limpar seleção</button><p class="help">Computador: arraste para girar; roda para zoom; botão direito para mover. Celular: um dedo gira; dois dedos aproximam e movem.</p><p class="help">O contorno ciano indica apenas os limites da malha selecionada. Materiais e geometrias não são modificados.</p><p><a href={href('models/hospital.glb')}>Abrir arquivo GLB original</a></p></aside>
+</div><noscript><p>Ative JavaScript para explorar o modelo. O restante do portal continua acessível sem o visualizador.</p></noscript></section>
+<script>
+import {mountHospitalViewer} from '../../features/hospital3d/viewer';
+const root=document.getElementById('hospital-viewer');
+if(root instanceof HTMLElement) mountHospitalViewer(root);
+</script>
+<style>
+.viewer-page{padding-block:44px}.viewer-page h1{font-size:clamp(32px,4vw,54px)}#hospital-viewer{display:grid;grid-template-columns:minmax(0,1fr) 290px;border:1px solid #d8e1e8;border-radius:16px;overflow:hidden;margin-top:28px}.viewport{position:relative;min-width:0;background:#f4f7fa}#hospital-canvas{width:100%;height:clamp(380px,65vh,760px)}#hospital-canvas :global(canvas){display:block;width:100%;height:100%;touch-action:none}.viewer-overlay{position:absolute;left:16px;top:16px;right:16px;pointer-events:none}.viewer-overlay p{display:inline-block;background:#fff;padding:8px 12px;border-radius:8px;color:#0b2545;font-size:13px;max-width:100%;overflow-wrap:anywhere}.viewer-overlay progress{display:block;width:min(250px,100%);accent-color:#005ce6}.viewer-overlay button{pointer-events:auto}.inspector{padding:22px;background:#fff}.inspector h2{font-size:23px}.inspector p{font-size:13px;overflow-wrap:anywhere}.inspector select{display:block;width:100%;margin:10px 0 18px;font:inherit;font-size:13px}.inspector button,.viewer-overlay button{display:block;width:100%;padding:12px;border-radius:8px;border:1px solid #d8e1e8;background:#0b2545;color:white;margin:10px 0;font:inherit;font-size:13px;cursor:pointer}.viewer-overlay button{width:auto}.inspector button:disabled{opacity:.5;cursor:default}.help{color:#526579}.inspector select:focus-visible,.inspector button:focus-visible{outline:3px solid #007b94;outline-offset:3px}[hidden]{display:none!important}@media(max-width:800px){#hospital-viewer{grid-template-columns:1fr}#hospital-canvas{height:55vh;min-height:330px}.inspector{border-top:1px solid #d8e1e8}}
+</style>
+</Layout>

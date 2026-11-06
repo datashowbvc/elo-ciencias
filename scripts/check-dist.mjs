@@ -6,3 +6,9 @@ for(const file of pages){for(const m of readFileSync(file,'utf8').matchAll(/(?:h
 if(errors.length){console.error(errors);process.exit(1)}
 for(const p of ['index.html','projeto/index.html','hospital/index.html','hospital/especialidades/index.html','hospital-3d/index.html'])if(!existsSync(join('dist',p)))throw new Error('Rota ausente: '+p);
 console.log(`${pages.length} arquivos HTML: caminhos locais verificados.`);
+const original=readFileSync('public/models/hospital.glb');
+const copied=readFileSync('dist/models/hospital.glb');
+if(!original.equals(copied))throw new Error('GLB compilado difere do original');
+const viewer=readFileSync('dist/hospital-3d/index.html','utf8');
+if(!viewer.includes('data-model-url="/elo-ciencias/models/hospital.glb"'))throw new Error('URL do modelo incorreta');
+console.log('GLB preservado byte a byte; caminho-base presente na pagina compilada. HTTP e WebGL exigem teste em navegador.');

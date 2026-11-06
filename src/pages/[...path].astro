@@ -1,7 +1,7 @@
 ---
 import Page from '../components/Page.astro';
 import {pages} from '../data/pages';
-export function getStaticPaths(){return pages.filter(p=>p.path!=='').map(page=>({params:{path:page.path.replace(/\/$/,'')},props:{page}}));}
+export function getStaticPaths(){return pages.filter(p=>p.path!==''&&p.path!=='hospital-3d/').map(page=>({params:{path:page.path.replace(/\/$/,'')},props:{page}}));}
 const {page}=Astro.props;
 ---
 <Page page={page}/>
