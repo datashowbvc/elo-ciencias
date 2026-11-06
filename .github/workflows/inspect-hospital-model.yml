@@ -1,0 +1,27 @@
+name: Inspecionar GLB hospitalar
+on:
+  push:
+    branches: [main]
+    paths:
+      - public/models/hospital.glb
+      - scripts/inspect-hospital-model.mjs
+      - .github/workflows/inspect-hospital-model.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Ler cabecalho e estrutura JSON do GLB
+        run: node scripts/inspect-hospital-model.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hospital-model-report
+          path: hospital-model-report.json
+          if-no-files-found: error
