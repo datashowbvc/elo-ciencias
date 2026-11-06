@@ -1,0 +1,6 @@
+---
+import Page from '../components/Page.astro';
+import {pages} from '../data/pages';
+const page=pages.find(p=>p.path==='')!;
+---
+<Page page={page}/>
