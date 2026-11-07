@@ -1,0 +1,7 @@
+---
+import Layout from '../../../layouts/BaseLayout.astro';
+import {href} from '../../../utils/paths';
+import '../../../styles/platform.css';
+const experiences=[['emergencias','Central de Emergências','Despache uma ambulância fictícia, acompanhe o trajeto e observe os efeitos do trânsito e das decisões.'],['triagem','Central de triagem','Ordene pacientes fictícios a partir das gravidades declaradas no cenário.'],['vacinacao','Desafio da vacinação','Distribua um orçamento ilustrativo e compare o alcance de campanhas.'],['gestao','Gestão hospitalar','Distribua leitos, equipes e kits limitados para atender demandas fictícias.']];
+---
+<Layout title="Simulações educativas" intro="Quatro experiências interativas sem dados pessoais ou serviços médicos reais." hospital><section class="shell lab"><p class="eyebrow">Saúde Conectada / Aprender fazendo</p><h1>Decisões com consequências visíveis.</h1><p class="lead">Escolha uma experiência. Cada atividade tem regras explícitas, interação, resultado e possibilidade de recomeçar.</p><ol class="path-list">{experiences.map(([path,title,text],i)=><li><a href={href('hospital/simulacoes/'+path+'/')}><span>0{i+1}</span><div><h2>{title}</h2><p>{text}</p></div><span aria-hidden="true">↗</span></a></li>)}</ol><p>Os modelos são simplificados e fictícios. Não são ferramentas clínicas ou previsões de saúde pública.</p></section></Layout>
