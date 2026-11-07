@@ -1,0 +1,5 @@
+---
+interface Props{name:'cross'|'pulse'|'cube'|'arrow'}
+const {name}=Astro.props;
+---
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{name==='cross'&&<path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/>}{name==='pulse'&&<path d="M3 12h4l2-6 4 12 2-6h6"/>}{name==='cube'&&<><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></>}{name==='arrow'&&<path d="M5 12h14M13 6l6 6-6 6"/>}</svg>
