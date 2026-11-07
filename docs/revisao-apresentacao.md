@@ -1,0 +1,4 @@
+# Revisão para apresentação
+Preserva o GLB, viewer, rotas e estilos-base. Acrescenta acabamento CSS, navegação, três páginas hospitalares, agendamento sem dados pessoais e três decisões educativas. Sem Jornada do Paciente ou deploy.
+Astro 7.4.7 e check 0.9.12 correspondem às versões instaladas pelo responsável. CI existente deve validar o conjunto completo. Os seis testes estruturais locais deste pacote passaram; não equivalem a teste visual. A instalação offline falhou: check/build não concluíram. Auditoria do dist depende do build.
+Pendentes: fontes fotográficas licenciadas, SVGs originais na interface, lockfile versionado e teste real desktop/celular. Hospital, equipe e agenda são fictícios. Não há mapa ou canais de atendimento inventados. A orientação SAMU 192 aponta ao Ministério da Saúde.

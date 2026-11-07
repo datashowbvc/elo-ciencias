@@ -1,65 +1,37 @@
 # Elo Ciências
-### Saúde pública e ciência: decisões que salvam vidas
+## Saúde pública e ciência: decisões que salvam vidas
+Portal educativo do Colégio Elo, hospital fictício Saúde Conectada e exploração arquitetônica 3D.
 
-Conhecer para cuidar. Plataforma educativa do Colégio Elo sobre ciência, prevenção e acesso à saúde, conectada ao hospital fictício **Saúde Conectada**.
+> **Em revisão. Não publicado.** Código disponível não significa validação visual concluída. Não há deploy neste pacote.
 
-> **Em desenvolvimento. Não publicado. Build aguardando validação.** Este envio é exclusivamente para revisão; não há demonstração pública confirmada, badges de aprovação ou capturas fictícias.
-
-## Três experiências
-| Área | Código desta fundação | Planejado |
+## Experiências
+| Área | Implementação em código | Limites |
 | --- | --- | --- |
-| Portal educativo | Início, projeto, seis temas e referências | Decisões interativas e revisão editorial |
-| Hospital virtual | Início, sobre, especialidades, serviços e estrutura | Equipe fictícia, agendamento e contato |
-| Hospital 3D | Página informativa do escopo | Arquitetura realista, câmeras, setores e Jornada do Paciente |
+| Portal | Seis temas, fontes e três decisões educativas | Interação em navegador a conferir |
+| Hospital | Institucional, especialidades, serviços, equipe fictícia, contato e agendamento demonstrativo | Sem serviço real ou coleta de dados pessoais |
+| 3D | Visualizador existente, rotação, zoom e seleção técnica | Sem setores confirmados ou Jornada do Paciente |
 
-Código presente não significa funcionalidade testada. Compilação, acessibilidade e testes visuais precisam de confirmação separada.
-
-## Objetivos
-Compreender a saúde como direito; conhecer SUS, ciência e vacinação; reconhecer desinformação; e investigar como setores colaboram no cuidado.
-
-## Tecnologias e estrutura
-Astro 5, TypeScript estrito, CSS responsivo, Node.js 22 e GitHub Actions. Three.js/React Three Fiber está planejado, não instalado.
-```text
-src/
-  components/  # apresentação reutilizável de páginas
-  layouts/     # cabeçalho, rodapé e variação hospitalar
-  pages/       # início, 404 e rotas estáticas
-  data/        # conteúdo tipado, separado da interface
-  styles/      # identidade e breakpoints
-  utils/       # prefixo e caminhos
-scripts/       # auditoria do build
-tests/         # verificações estruturais
-.github/       # CI sem deploy
-```
-A rota [...path].astro gera HTML independente para cada entrada, inclusive páginas aninhadas. Não é SPA. Base: /elo-ciencias/.
-
-## Desenvolvimento
-Requisitos: Node.js 22 e npm.
+## Executar
+Node >=22.23.4, npm >=9.6.5.
 ```sh
 npm install
 npm test
 npm run check
 npm run build
 node scripts/check-dist.mjs
-npm run dev
+npm run preview
 ```
-Abra o endereço informado pelo Astro com o prefixo /elo-ciencias/. Use npm run preview para revisar o build.
+Abra `/elo-ciencias/` no servidor indicado. Maquete: `/elo-ciencias/hospital-3d/`. Windows: use npm.cmd se necessário.
 
-## CI e lockfile
-O workflow executa npm install para gerar um package-lock.json real, testa npm ci, roda testes, checa tipos, compila e audita caminhos. O lockfile e logs ficam no artefato dependencias-revisao; dist fica em build-revisao. O lockfile deverá ser revisado e versionado depois. Não foi escrito manualmente.
+## Organização e tecnologias
+Astro 7.4.7, @astrojs/check 0.9.12, TypeScript 5.9.2, Three.js 0.170.0. Páginas independentes, layouts compartilhados, conteúdo em src/data, interações em src/components, estilos em src/styles e viewer em src/features/hospital3d. Scripts e testes ficam separados.
 
-O ambiente local não permitiu instalar dependências via rede. Não há build local confirmado. Testes estruturais não comprovam responsividade. Consulte a execução em Actions.
+## Verificação e publicação
+CI existente gera lockfile real, executa testes/check/build e auditoria e guarda artefatos. Sem publicação. O lockfile precisa ser revisado e versionado; nenhum foi inventado. A instalação local do responsável informou zero vulnerabilidades após atualizar Astro; esse resultado não substitui nova auditoria. Check/build no ambiente do assistente permanecem bloqueados pela instalação sem rede. Testes estruturais não comprovam renderização. Não há badges ou screenshots falsos.
 
-## Publicação bloqueada
-Não há job de deploy nem permissão de escrita no Pages. O CI apenas valida e guarda artefatos. Publicação exige aprovação posterior e configuração própria. O domínio presente na configuração não significa site no ar.
+## Ciência e recursos
+Fontes: Ministério da Saúde, PNI, CNS e OMS, vinculadas nas páginas. Conteúdo não substitui orientação profissional. O hospital e todos os profissionais demonstrativos são fictícios. Não há atendimento, endereço, telefone hospitalar ou consulta reais.
+Fotografias licenciadas, integração dos SVGs originais e revisão visual ainda estão pendentes. A identificação textual não é uma nova logo. GLB original preservado. Sem analytics ou fontes remotas. Créditos e limitações: docs/revisao-apresentacao.md e docs/visualizador-3d.md. Integrantes e orientadores aguardam confirmação.
 
-## Identidade e demonstração visual
-Azul-marinho #0B2545, azul #005CE6, ciano #00E5FF pontual e cinza claro #F4F7FA. Tipografia de sistema nesta revisão. Capturas serão inseridas após execução real. Fotos reais licenciadas e integração das variantes SVG originais estão pendentes. O cabeçalho hospitalar usa identificação textual provisória, não uma nova logo. Não há modelos 3D redistribuídos.
-
-## Fontes e créditos
-Ministério da Saúde, PNI, Conselho Nacional de Saúde e OMS estão vinculados nas páginas. Referências de organização: Ponto Gastro e Hospital Esperança, sem cópia de imagens ou textos. Não há analytics, fontes remotas nem biblioteca de ícones.
-Modelo indicado pelo responsável: https://sketchfab.com/3d-models/surgical-room-catheter-lab-471eca7cc5fc4285bc733b6ca847abd6 . Não incorporado; licença ainda precisa de verificação. SVGs originais deverão ser preservados sem alteração ao serem integrados.
-
-## Responsabilidade e licença
-Hospital exclusivamente fictício e educativo. Sem atendimento, diagnóstico, coleta de dados de saúde ou agendamento real. Conteúdo não substitui orientação profissional. Integrantes e orientadores aguardam confirmação.
-Licença ainda não definida. Não presumir autorização de redistribuição de marcas ou recursos de terceiros; licença do código será tratada separadamente.
+## Licença
+Ainda não definida. Marcas e recursos de terceiros não recebem automaticamente licença aberta. Modelo cirúrgico apenas indicado, não incorporado: https://sketchfab.com/3d-models/surgical-room-catheter-lab-471eca7cc5fc4285bc733b6ca847abd6 .
