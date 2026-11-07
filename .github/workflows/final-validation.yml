@@ -1,0 +1,66 @@
+name: Validacao final sem deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/final-validation.yml'
+      - 'scripts/final-validation.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: final-validation
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Consultar execucoes dos tres commits
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for sha in 422597d4ef88e803128da6099a2ba30657f9e189 3e60cbefdc549937513ebcf39ba82374f638a1bf 5ea6793ca2aef1a847cdc7c4b04f55efdf2d5b37; do
+            gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$sha&per_page=100" > "$RUNNER_TEMP/history-$sha.json" || printf '{"error":"Consulta ao historico falhou"}' > "$RUNNER_TEMP/history-$sha.json"
+          done
+      - name: Testar commits, build, rotas e preservacao
+        run: node scripts/final-validation.mjs
+      - name: Guardar relatorio sem publicar o site
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validacao-final
+          path: docs/final-validation.json
+          if-no-files-found: error
+      - name: Versionar somente o relatorio
+        if: always()
+        run: |
+          if test -f docs/final-validation.json; then
+            cp docs/final-validation.json "$RUNNER_TEMP/elo-final-report.json"
+            git fetch origin main
+            git checkout -B main origin/main
+            mkdir -p docs
+            cp "$RUNNER_TEMP/elo-final-report.json" docs/final-validation.json
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/final-validation.json
+            if ! git diff --cached --quiet; then
+              git commit -m "chore: registra resultados reais da validacao final"
+              git push origin HEAD:main
+            fi
+          fi
