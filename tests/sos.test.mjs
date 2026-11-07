@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {prepareRoute,at,metres,nearest,begin,advance,eta,distance,redirect,avoids} from '../src/features/sos/engine.mjs';
+const out=()=>prepareRoute([[-34.901,-8.123],[-34.9005,-8.123],[-34.9005,-8.1225],[-34.9,-8.1225]]);
+const back=()=>prepareRoute([[-34.9,-8.1225],[-34.9005,-8.1225],[-34.9005,-8.123],[-34.901,-8.123]]);
+test('Interpolação passa pelas curvas, sem cortar o trajeto',()=>{const r=out();const p=at(r,r.cumulative[1]);assert.ok(metres(p,r.points[1])<.001);assert.ok(metres(at(r,r.length),r.points.at(-1))<.001);assert.throws(()=>prepareRoute([[0,0],[1,1]]));});
+test('Seleciona disponível com menor distância viária informada',()=>{assert.equal(nearest([{id:'A',distance:100,available:false},{id:'B',distance:200,available:true},{id:'C',distance:150,available:true}]).id,'C');assert.throws(()=>nearest([]));});
+test('Ciclo termina em cerca de 70 segundos, com 10 de atendimento',()=>{const s=begin(out(),back(),'AMB-02');let careTicks=0;for(let i=0;i<180&&s.phase!=='complete';i++){if(s.phase==='care')careTicks++;advance(s,.5);}assert.equal(s.phase,'complete');assert.ok(Math.abs(s.elapsed-70)<2);assert.equal(careTicks,20);assert.ok(metres(s.position,back().points.at(-1))<.001);assert.equal(eta(s),0);assert.ok(distance(s)>0);});
+test('Trânsito e semáforos aumentam a duração e geram paradas',()=>{const s=begin(out(),back(),'AMB-01');for(let i=0;i<250&&s.phase!=='complete';i++)advance(s,.5,{signals:true,traffic:true});assert.equal(s.phase,'complete');assert.ok(s.waited>=12);assert.ok(s.elapsed>=82);});
+test('Desvio preserva posição e rejeita salto',()=>{const s=begin(out(),back(),'AMB-01');advance(s,3);const p=[...s.position];const r=prepareRoute([[p[1],p[0]],[-34.9008,-8.123],[-34.9008,-8.1225],[-34.9,-8.1225]]);redirect(s,r);assert.deepEqual(s.position,p);assert.throws(()=>redirect(s,back()));});
+test('Bloqueio considera também o meio dos segmentos',()=>{const r=out();assert.equal(avoids(r,at(r,r.cumulative[1]/2),10),false);assert.equal(avoids(r,[-8.14,-34.92]),true);});
