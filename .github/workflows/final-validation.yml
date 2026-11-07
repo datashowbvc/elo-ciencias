@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/final-validation.yml'
       - 'scripts/final-validation.mjs'
+      - 'src/styles/platform.css'
   workflow_dispatch:
 
 permissions:
