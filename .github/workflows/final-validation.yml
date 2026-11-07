@@ -4,14 +4,15 @@ on:
   push:
     branches: [main]
     paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'package*.json'
       - '.github/workflows/final-validation.yml'
-      - 'scripts/final-validation.mjs'
-      - 'src/styles/platform.css'
   workflow_dispatch:
 
 permissions:
   contents: read
-  actions: read
 
 concurrency:
   group: final-validation
@@ -20,35 +21,37 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 35
     permissions:
       contents: write
-      actions: read
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Consultar execucoes dos tres commits
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          for sha in 422597d4ef88e803128da6099a2ba30657f9e189 3e60cbefdc549937513ebcf39ba82374f638a1bf 5ea6793ca2aef1a847cdc7c4b04f55efdf2d5b37; do
-            gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$sha&per_page=100" > "$RUNNER_TEMP/history-$sha.json" || printf '{"error":"Consulta ao historico falhou"}' > "$RUNNER_TEMP/history-$sha.json"
-          done
-      - name: Testar commits, build, rotas e preservacao
+      - name: Testes, Astro check, build, rotas e preservacao
         run: node scripts/final-validation.mjs
-      - name: Guardar relatorio sem publicar o site
+      - name: Instalar ferramentas de navegador isoladas do projeto
+        run: |
+          npm install --prefix "$RUNNER_TEMP/elo-browser" --no-audit --no-fund playwright@1.56.1 leaflet@1.9.4
+          "$RUNNER_TEMP/elo-browser/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Interacoes, responsividade, GLB e SOS em navegador
+        env:
+          BROWSER_TOOLS: ${{ runner.temp }}/elo-browser
+        run: node scripts/browser-validation.mjs
+      - name: Guardar evidencias sem publicar
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: validacao-final
-          path: docs/final-validation.json
+          path: |
+            docs/final-validation.json
+            validation-logs/
+            validation-screenshots/
           if-no-files-found: error
-      - name: Versionar somente o relatorio
+      - name: Versionar somente o relatorio compacto
         if: always()
         run: |
           if test -f docs/final-validation.json; then
