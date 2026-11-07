@@ -1,6 +1,5 @@
 ---
-import Page from '../components/Page.astro';
-import {pages} from '../data/pages';
-const page=pages.find(p=>p.path==='')!;
+import Layout from '../layouts/BaseLayout.astro';
+import {href} from '../utils/paths';
 ---
-<Page page={page}/>
+<Layout title="Saúde pública e ciência: decisões que salvam vidas" intro="Conhecer para cuidar: uma plataforma educativa para explorar ciência e experimentar decisões em cenários fictícios."><section class="platform-hero"><div class="shell"><p class="eyebrow">Elo Ciências / Conhecer para cuidar</p><h1>Aprender sobre saúde.<br/>Experimentar decisões.</h1><p class="lead">Ciência, direitos e cuidado coletivo. Conheça os temas e explore cenários fictícios para compreender escolhas, limites e consequências.</p><div class="actions"><a class="button" href={href('hospital/simulacoes/emergencias/')}>Explorar a Central de Emergências ↗</a><a class="button secondary" href={href('projeto/')}>Conhecer o projeto</a></div></div></section><section class="shell section"><p class="eyebrow">Duas áreas / Um propósito educativo</p><ol class="path-list"><li><a href={href('saude-publica/')}><span>01</span><div><h2>Elo Ciências</h2><p>Saúde pública, ciência e sociedade, SUS, vacinação, prevenção e verificação de informações. Conteúdo organizado em páginas independentes, com fontes.</p></div><span aria-hidden="true">↗</span></a></li><li><a href={href('hospital/')}><span>02</span><div><h2>Saúde Conectada</h2><p>Hospital fictício, estrutura, equipe, modelo 3D, simulações e atividades educativas. Um ambiente para aprender tomando decisões.</p></div><span aria-hidden="true">↗</span></a></li></ol></section></Layout>
