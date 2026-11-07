@@ -1,385 +1,224 @@
 {
-  "generatedAt": "2026-11-07T10:38:05.019Z",
-  "workflowRun": "https://github.com/datashowbvc/elo-ciencias/actions/runs/42364767532",
+  "sha": "41b8e28d6c42e1a3ed55aa33b2576cc28ec05730",
+  "generatedAt": "2026-11-07T11:41:43.398Z",
+  "workflowRun": "https://github.com/datashowbvc/elo-ciencias/actions/runs/42369243325",
   "node": "v22.23.4",
-  "baseline": "65301b70f0ca8c0319240c78e03570c5a3d35f5d",
   "deployExecuted": false,
-  "results": [
+  "baseline": "65301b70f0ca8c0319240c78e03570c5a3d35f5d",
+  "checks": {
+    "install": {
+      "passed": true,
+      "exitCode": 0
+    },
+    "tests": {
+      "passed": true,
+      "exitCode": 0,
+      "count": 31
+    },
+    "check": {
+      "passed": true,
+      "exitCode": 0,
+      "diagnostics": "\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m112\u001b[0m - \u001b[93mwarning\u001b[0m\u001b[90m ts(6133): \u001b[0m'pathLength' is declared but its value is never read.\n\n\u001b[7m3\u001b[0m import {nodes,edges,edgeKey,route,createRun,dispatch,tick,obstruct,selectHospital,assessTriage,campaign,manage,pathLength} from '../src/features/simulations/engine.mjs';\n\u001b[7m \u001b[0m \u001b[93m                                                                                                               ~~~~~~~~~~\u001b[0m\n\nResult (45 files): \n- 0 errors\n- 0 warnings\n- 5 hints\n\n\n"
+    },
+    "build": {
+      "passed": true,
+      "exitCode": 0
+    },
+    "audit": {
+      "passed": true,
+      "exitCode": 0,
+      "message": "34 arquivos HTML: caminhos locais verificados.\nGLB preservado byte a byte; caminho-base presente na pagina compilada. HTTP e WebGL exigem teste em navegador.\n\n"
+    }
+  },
+  "preserved": {
+    "public/models/hospital.glb": true,
+    "src/features/hospital3d": true
+  },
+  "routes": [
     {
-      "sha": "422597d4ef88e803128da6099a2ba30657f9e189",
-      "checks": {
-        "checkout": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "HEAD is now at 422597d feat: motor local de emergências e dinâmicas educativas com testes\n\nPreparing worktree (detached HEAD 422597d)\n"
-        },
-        "install": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\nadded 282 packages in 5s\n\n"
-        },
-        "tests": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 test\n> node --test tests/*.test.mjs\n\nTAP version 13\n# Subtest: Base estatica multipagina\nok 1 - Base estatica multipagina\n  ---\n  duration_ms: 0.747819\n  type: 'test'\n  ...\n# Subtest: Workflow nao publica\nok 2 - Workflow nao publica\n  ---\n  duration_ms: 0.281565\n  type: 'test'\n  ...\n# Subtest: Dependencias revisadas\nok 3 - Dependencias revisadas\n  ---\n  duration_ms: 0.181744\n  type: 'test'\n  ...\n# Subtest: Three e addons usam mesmo pacote fixado\nok 4 - Three e addons usam mesmo pacote fixado\n  ---\n  duration_ms: 0.66246\n  type: 'test'\n  ...\n# Subtest: Rota própria evita duplicação e respeita base\nok 5 - Rota própria evita duplicação e respeita base\n  ---\n  duration_ms: 0.167994\n  type: 'test'\n  ...\n# Subtest: Seleção não altera materiais originais e pontos permanecem vazios\nok 6 - Seleção não altera materiais originais e pontos permanecem vazios\n  ---\n  duration_ms: 0.217208\n  type: 'test'\n  ...\n# Subtest: GLB real existe e possui cabeçalho coerente\nok 7 - GLB real existe e possui cabeçalho coerente\n  ---\n  duration_ms: 1.822893\n  type: 'test'\n  ...\n# Subtest: Simulação não coleta dados pessoais ou envia requisições\nok 8 - Simulação não coleta dados pessoais ou envia requisições\n  ---\n  duration_ms: 0.822382\n  type: 'test'\n  ...\n# Subtest: Páginas hospitalares independentes e aprendizagem presentes\nok 9 - Páginas hospitalares independentes e aprendizagem presentes\n  ---\n  duration_ms: 0.314344\n  type: 'test'\n  ...\n# Subtest: Acabamento respeita movimento reduzido e largura móvel\nok 10 - Acabamento respeita movimento reduzido e largura móvel\n  ---\n  duration_ms: 0.137067\n  type: 'test'\n  ...\n# Subtest: Rotas usam somente ruas conectadas e respeitam bloqueios\nok 11 - Rotas usam somente ruas conectadas e respeitam bloqueios\n  ---\n  duration_ms: 98.978155\n  type: 'test'\n  ...\n# Subtest: Central percorre ocorrência, atendimento, transporte e relatório\nok 12 - Central percorre ocorrência, atendimento, transporte e relatório\n  ---\n  duration_ms: 2.661599\n  type: 'test'\n  ...\n# Subtest: Congestionamento muda velocidade e semáforo provoca espera\nok 13 - Congestionamento muda velocidade e semáforo provoca espera\n  ---\n  duration_ms: 0.662691\n  type: 'test'\n  ...\n# Subtest: Desvio não teletransporta a ambulância\nok 14 - Desvio não teletransporta a ambulância\n  ---\n  duration_ms: 1.031588\n  type: 'test'\n  ...\n# Subtest: Pausa e encerramento não avançam estado; reinício é independente\nok 15 - Pausa e encerramento não avançam estado; reinício é independente\n  ---\n  duration_ms: 1.116376\n  type: 'test'\n  ...\n# Subtest: Triagem valida seleção única e explica ordem\nok 16 - Triagem valida seleção única e explica ordem\n  ---\n  duration_ms: 0.273493\n  type: 'test'\n  ...\n# Subtest: Vacinação preserva população e orçamento fictícios\nok 17 - Vacinação preserva população e orçamento fictícios\n  ---\n  duration_ms: 0.305221\n  type: 'test'\n  ...\n# Subtest: Gestão limita recursos e produz consequência\nok 18 - Gestão limita recursos e produz consequência\n  ---\n  duration_ms: 0.188264\n  type: 'test'\n  ...\n1..18\n# tests 18\n# suites 0\n# pass 18\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 192.00842\n\n"
-        },
-        "check": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 check\n> astro check\n\n\u001b[2m10:38:11\u001b[22m \u001b[34m[types]\u001b[39m Generated \u001b[2m68ms\u001b[22m\n\u001b[2m10:38:11\u001b[22m \u001b[34m[check]\u001b[39m Getting diagnostics for Astro files in /tmp/elo-final-422597d4ef88e803128da6099a2ba30657f9e189...\n\u001b[96mtests/simulations.test.mjs\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m112\u001b[0m - \u001b[93mwarning\u001b[0m\u001b[90m ts(6133): \u001b[0m'pathLength' is declared but its value is never read.\n\n\u001b[7m3\u001b[0m import {nodes,edges,edgeKey,route,createRun,dispatch,tick,obstruct,selectHospital,assessTriage,campaign,manage,pathLength} from '../src/features/simulations/engine.mjs';\n\u001b[7m \u001b[0m \u001b[93m                                                                                                               ~~~~~~~~~~\u001b[0m\n\nResult (22 files): \n- 0 errors\n- 0 warnings\n- 1 hint\n\n\n"
-        },
-        "build": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 build\n> astro build\n\n\u001b[2m10:38:13\u001b[22m \u001b[34m[types]\u001b[39m Generated \u001b[2m25ms\u001b[22m\n\u001b[2m10:38:13\u001b[22m \u001b[34m[build]\u001b[39m output: \u001b[34m\"static\"\u001b[39m\n\u001b[2m10:38:13\u001b[22m \u001b[34m[build]\u001b[39m mode: \u001b[34m\"static\"\u001b[39m\n\u001b[2m10:38:13\u001b[22m \u001b[34m[build]\u001b[39m directory: \u001b[34m/tmp/elo-final-422597d4ef88e803128da6099a2ba30657f9e189/dist/\u001b[39m\n\u001b[2m10:38:13\u001b[22m \u001b[34m[build]\u001b[39m Collecting build info...\n\u001b[2m10:38:13\u001b[22m \u001b[34m[build]\u001b[39m \u001b[32m✓ Completed in 61ms.\u001b[39m\n\u001b[2m10:38:13\u001b[22m \u001b[34m[build]\u001b[39m Building static entrypoints...\n\u001b[2m10:38:13\u001b[22m \u001b[34m[vite]\u001b[39m \u001b[32m✓ built in 99ms\u001b[39m\n\u001b[33m\u001b[1m10:38:13\u001b[22m [WARN] [vite]\u001b[39m \u001b[33m[plugin builtin:vite-reporter] \n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001b[39m\n\u001b[2m10:38:13\u001b[22m \u001b[34m[vite]\u001b[39m \u001b[32m✓ built in 96ms\u001b[39m\n\u001b[2m10:38:13\u001b[22m \u001b[34m[build]\u001b[39m Rearranging server assets...\n\n\u001b[42m\u001b[30m generating static routes \u001b[39m\u001b[49m\n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/404.html\u001b[22m \u001b[2m(+10ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/agendamento/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/corpo-clinico/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/contato/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital-3d/index.html\u001b[22m \u001b[2m(+3ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/index.html\u001b[22m \u001b[2m(+3ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/projeto/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/saude-publica/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/ciencia/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/sus/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/prevencao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/vacinas/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/desinformacao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/referencias/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/sobre/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/especialidades/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/servicos/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/estrutura/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:14\u001b[22m \u001b[32m✓ Completed in 52ms.\n\u001b[39m\n\u001b[2m10:38:14\u001b[22m \u001b[34m[build]\u001b[39m \u001b[32m✓ Completed in 279ms.\u001b[39m\n\u001b[2m10:38:14\u001b[22m \u001b[34m[build]\u001b[39m 19 page(s) built in \u001b[1m341ms\u001b[22m\n\u001b[2m10:38:14\u001b[22m \u001b[34m[build]\u001b[39m \u001b[1mComplete!\u001b[22m\n\n"
-        },
-        "audit": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "19 arquivos HTML: caminhos locais verificados.\nGLB preservado byte a byte; caminho-base presente na pagina compilada. HTTP e WebGL exigem teste em navegador.\n\n"
-        }
-      },
-      "routes": [
-        {
-          "path": "/elo-ciencias/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/projeto/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/especialidades/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital-3d/",
-          "present": true
-        }
-      ],
-      "preserved": {
-        "public/models/hospital.glb": true,
-        "src/features/hospital3d": true,
-        "src/pages/hospital-3d": true
-      },
-      "previousRuns": [
-        {
-          "id": 42324931736,
-          "name": "Revisao sem publicacao",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/datashowbvc/elo-ciencias/actions/runs/42324931736",
-          "headSha": "422597d4ef88e803128da6099a2ba30657f9e189"
-        },
-        {
-          "id": 42324930866,
-          "name": "pages build and deployment",
-          "status": "completed",
-          "conclusion": "failure",
-          "url": "https://github.com/datashowbvc/elo-ciencias/actions/runs/42324930866",
-          "headSha": "422597d4ef88e803128da6099a2ba30657f9e189"
-        }
-      ],
-      "passed": true
+      "path": "/elo-ciencias/",
+      "present": true
     },
     {
-      "sha": "3e60cbefdc549937513ebcf39ba82374f638a1bf",
-      "checks": {
-        "checkout": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "HEAD is now at 3e60cbe feat: central de emergências animada e quatro experiências interativas\n\nPreparing worktree (detached HEAD 3e60cbe)\n"
-        },
-        "install": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\nadded 282 packages in 3s\n\n"
-        },
-        "tests": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 test\n> node --test tests/*.test.mjs\n\nTAP version 13\n# Subtest: Base estatica multipagina\nok 1 - Base estatica multipagina\n  ---\n  duration_ms: 0.720047\n  type: 'test'\n  ...\n# Subtest: Workflow nao publica\nok 2 - Workflow nao publica\n  ---\n  duration_ms: 0.305671\n  type: 'test'\n  ...\n# Subtest: Dependencias revisadas\nok 3 - Dependencias revisadas\n  ---\n  duration_ms: 0.176706\n  type: 'test'\n  ...\n# Subtest: Three e addons usam mesmo pacote fixado\nok 4 - Three e addons usam mesmo pacote fixado\n  ---\n  duration_ms: 0.674308\n  type: 'test'\n  ...\n# Subtest: Rota própria evita duplicação e respeita base\nok 5 - Rota própria evita duplicação e respeita base\n  ---\n  duration_ms: 0.167904\n  type: 'test'\n  ...\n# Subtest: Seleção não altera materiais originais e pontos permanecem vazios\nok 6 - Seleção não altera materiais originais e pontos permanecem vazios\n  ---\n  duration_ms: 0.189547\n  type: 'test'\n  ...\n# Subtest: GLB real existe e possui cabeçalho coerente\nok 7 - GLB real existe e possui cabeçalho coerente\n  ---\n  duration_ms: 2.001972\n  type: 'test'\n  ...\n# Subtest: Simulação não coleta dados pessoais ou envia requisições\nok 8 - Simulação não coleta dados pessoais ou envia requisições\n  ---\n  duration_ms: 1.573987\n  type: 'test'\n  ...\n# Subtest: Páginas hospitalares independentes e aprendizagem presentes\nok 9 - Páginas hospitalares independentes e aprendizagem presentes\n  ---\n  duration_ms: 0.388507\n  type: 'test'\n  ...\n# Subtest: Acabamento respeita movimento reduzido e largura móvel\nok 10 - Acabamento respeita movimento reduzido e largura móvel\n  ---\n  duration_ms: 0.161063\n  type: 'test'\n  ...\n# Subtest: Rotas usam somente ruas conectadas e respeitam bloqueios\nok 11 - Rotas usam somente ruas conectadas e respeitam bloqueios\n  ---\n  duration_ms: 92.290384\n  type: 'test'\n  ...\n# Subtest: Central percorre ocorrência, atendimento, transporte e relatório\nok 12 - Central percorre ocorrência, atendimento, transporte e relatório\n  ---\n  duration_ms: 2.713136\n  type: 'test'\n  ...\n# Subtest: Congestionamento muda velocidade e semáforo provoca espera\nok 13 - Congestionamento muda velocidade e semáforo provoca espera\n  ---\n  duration_ms: 0.305341\n  type: 'test'\n  ...\n# Subtest: Desvio não teletransporta a ambulância\nok 14 - Desvio não teletransporta a ambulância\n  ---\n  duration_ms: 0.704483\n  type: 'test'\n  ...\n# Subtest: Pausa e encerramento não avançam estado; reinício é independente\nok 15 - Pausa e encerramento não avançam estado; reinício é independente\n  ---\n  duration_ms: 0.652635\n  type: 'test'\n  ...\n# Subtest: Triagem valida seleção única e explica ordem\nok 16 - Triagem valida seleção única e explica ordem\n  ---\n  duration_ms: 0.209096\n  type: 'test'\n  ...\n# Subtest: Vacinação preserva população e orçamento fictícios\nok 17 - Vacinação preserva população e orçamento fictícios\n  ---\n  duration_ms: 0.205089\n  type: 'test'\n  ...\n# Subtest: Gestão limita recursos e produz consequência\nok 18 - Gestão limita recursos e produz consequência\n  ---\n  duration_ms: 0.130527\n  type: 'test'\n  ...\n1..18\n# tests 18\n# suites 0\n# pass 18\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 182.993602\n\n"
-        },
-        "check": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 check\n> astro check\n\n\u001b[2m10:38:17\u001b[22m \u001b[34m[types]\u001b[39m Generated \u001b[2m69ms\u001b[22m\n\u001b[2m10:38:17\u001b[22m \u001b[34m[check]\u001b[39m Getting diagnostics for Astro files in /tmp/elo-final-3e60cbefdc549937513ebcf39ba82374f638a1bf...\n\u001b[96mtests/simulations.test.mjs\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m112\u001b[0m - \u001b[93mwarning\u001b[0m\u001b[90m ts(6133): \u001b[0m'pathLength' is declared but its value is never read.\n\n\u001b[7m3\u001b[0m import {nodes,edges,edgeKey,route,createRun,dispatch,tick,obstruct,selectHospital,assessTriage,campaign,manage,pathLength} from '../src/features/simulations/engine.mjs';\n\u001b[7m \u001b[0m \u001b[93m                                                                                                               ~~~~~~~~~~\u001b[0m\n\nResult (25 files): \n- 0 errors\n- 0 warnings\n- 1 hint\n\n\n"
-        },
-        "build": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 build\n> astro build\n\n\u001b[2m10:38:20\u001b[22m \u001b[34m[types]\u001b[39m Generated \u001b[2m35ms\u001b[22m\n\u001b[2m10:38:20\u001b[22m \u001b[34m[build]\u001b[39m output: \u001b[34m\"static\"\u001b[39m\n\u001b[2m10:38:20\u001b[22m \u001b[34m[build]\u001b[39m mode: \u001b[34m\"static\"\u001b[39m\n\u001b[2m10:38:20\u001b[22m \u001b[34m[build]\u001b[39m directory: \u001b[34m/tmp/elo-final-3e60cbefdc549937513ebcf39ba82374f638a1bf/dist/\u001b[39m\n\u001b[2m10:38:20\u001b[22m \u001b[34m[build]\u001b[39m Collecting build info...\n\u001b[2m10:38:20\u001b[22m \u001b[34m[build]\u001b[39m \u001b[32m✓ Completed in 63ms.\u001b[39m\n\u001b[2m10:38:20\u001b[22m \u001b[34m[build]\u001b[39m Building static entrypoints...\n\u001b[2m10:38:20\u001b[22m \u001b[34m[vite]\u001b[39m \u001b[32m✓ built in 114ms\u001b[39m\n\u001b[33m\u001b[1m10:38:20\u001b[22m [WARN] [vite]\u001b[39m \u001b[33m[plugin builtin:vite-reporter] \n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001b[39m\n\u001b[2m10:38:20\u001b[22m \u001b[34m[vite]\u001b[39m \u001b[32m✓ built in 116ms\u001b[39m\n\u001b[2m10:38:20\u001b[22m \u001b[34m[build]\u001b[39m Rearranging server assets...\n\n\u001b[42m\u001b[30m generating static routes \u001b[39m\u001b[49m\n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/404.html\u001b[22m \u001b[2m(+8ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/emergencias/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/triagem/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/vacinacao/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/gestao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/agendamento/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/corpo-clinico/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/contato/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital-3d/index.html\u001b[22m \u001b[2m(+3ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/projeto/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/saude-publica/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/ciencia/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/sus/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/prevencao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/vacinas/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/desinformacao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/referencias/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/sobre/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/especialidades/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/servicos/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/estrutura/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:20\u001b[22m \u001b[32m✓ Completed in 49ms.\n\u001b[39m\n\u001b[2m10:38:20\u001b[22m \u001b[34m[build]\u001b[39m \u001b[32m✓ Completed in 312ms.\u001b[39m\n\u001b[2m10:38:20\u001b[22m \u001b[34m[build]\u001b[39m 24 page(s) built in \u001b[1m377ms\u001b[22m\n\u001b[2m10:38:20\u001b[22m \u001b[34m[build]\u001b[39m \u001b[1mComplete!\u001b[22m\n\n"
-        },
-        "audit": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "24 arquivos HTML: caminhos locais verificados.\nGLB preservado byte a byte; caminho-base presente na pagina compilada. HTTP e WebGL exigem teste em navegador.\n\n"
-        }
-      },
-      "routes": [
-        {
-          "path": "/elo-ciencias/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/projeto/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/especialidades/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital-3d/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/emergencias/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/triagem/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/vacinacao/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/gestao/",
-          "present": true
-        }
-      ],
-      "preserved": {
-        "public/models/hospital.glb": true,
-        "src/features/hospital3d": true,
-        "src/pages/hospital-3d": true
-      },
-      "previousRuns": [
-        {
-          "id": 42325165197,
-          "name": "Revisao sem publicacao",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/datashowbvc/elo-ciencias/actions/runs/42325165197",
-          "headSha": "3e60cbefdc549937513ebcf39ba82374f638a1bf"
-        },
-        {
-          "id": 42325164571,
-          "name": "pages build and deployment",
-          "status": "completed",
-          "conclusion": "failure",
-          "url": "https://github.com/datashowbvc/elo-ciencias/actions/runs/42325164571",
-          "headSha": "3e60cbefdc549937513ebcf39ba82374f638a1bf"
-        }
-      ],
-      "passed": true
+      "path": "/elo-ciencias/projeto/",
+      "present": true
     },
     {
-      "sha": "5ea6793ca2aef1a847cdc7c4b04f55efdf2d5b37",
-      "checks": {
-        "checkout": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "HEAD is now at 5ea6793 refactor: separa conhecimento e experiências na navegação da plataforma\n\nPreparing worktree (detached HEAD 5ea6793)\n"
-        },
-        "install": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\nadded 282 packages in 3s\n\n"
-        },
-        "tests": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 test\n> node --test tests/*.test.mjs\n\nTAP version 13\n# Subtest: Base estatica multipagina\nok 1 - Base estatica multipagina\n  ---\n  duration_ms: 0.70205\n  type: 'test'\n  ...\n# Subtest: Workflow nao publica\nok 2 - Workflow nao publica\n  ---\n  duration_ms: 0.280554\n  type: 'test'\n  ...\n# Subtest: Dependencias revisadas\nok 3 - Dependencias revisadas\n  ---\n  duration_ms: 0.180022\n  type: 'test'\n  ...\n# Subtest: Three e addons usam mesmo pacote fixado\nok 4 - Three e addons usam mesmo pacote fixado\n  ---\n  duration_ms: 0.646426\n  type: 'test'\n  ...\n# Subtest: Rota própria evita duplicação e respeita base\nok 5 - Rota própria evita duplicação e respeita base\n  ---\n  duration_ms: 0.166061\n  type: 'test'\n  ...\n# Subtest: Seleção não altera materiais originais e pontos permanecem vazios\nok 6 - Seleção não altera materiais originais e pontos permanecem vazios\n  ---\n  duration_ms: 0.187213\n  type: 'test'\n  ...\n# Subtest: GLB real existe e possui cabeçalho coerente\nok 7 - GLB real existe e possui cabeçalho coerente\n  ---\n  duration_ms: 1.83399\n  type: 'test'\n  ...\n# Subtest: Simulação de agendamento não coleta dados pessoais ou envia requisições\nok 8 - Simulação de agendamento não coleta dados pessoais ou envia requisições\n  ---\n  duration_ms: 0.800188\n  type: 'test'\n  ...\n# Subtest: Rotas antigas preservadas e atividades em página independente\nok 9 - Rotas antigas preservadas e atividades em página independente\n  ---\n  duration_ms: 0.371982\n  type: 'test'\n  ...\n# Subtest: Navegação distingue áreas e simulações\nok 10 - Navegação distingue áreas e simulações\n  ---\n  duration_ms: 0.211209\n  type: 'test'\n  ...\n# Subtest: Acabamento respeita movimento reduzido e largura móvel\nok 11 - Acabamento respeita movimento reduzido e largura móvel\n  ---\n  duration_ms: 1.428848\n  type: 'test'\n  ...\n# Subtest: Rotas usam somente ruas conectadas e respeitam bloqueios\nok 12 - Rotas usam somente ruas conectadas e respeitam bloqueios\n  ---\n  duration_ms: 88.329241\n  type: 'test'\n  ...\n# Subtest: Central percorre ocorrência, atendimento, transporte e relatório\nok 13 - Central percorre ocorrência, atendimento, transporte e relatório\n  ---\n  duration_ms: 2.732506\n  type: 'test'\n  ...\n# Subtest: Congestionamento muda velocidade e semáforo provoca espera\nok 14 - Congestionamento muda velocidade e semáforo provoca espera\n  ---\n  duration_ms: 0.306824\n  type: 'test'\n  ...\n# Subtest: Desvio não teletransporta a ambulância\nok 15 - Desvio não teletransporta a ambulância\n  ---\n  duration_ms: 0.713788\n  type: 'test'\n  ...\n# Subtest: Pausa e encerramento não avançam estado; reinício é independente\nok 16 - Pausa e encerramento não avançam estado; reinício é independente\n  ---\n  duration_ms: 0.632745\n  type: 'test'\n  ...\n# Subtest: Triagem valida seleção única e explica ordem\nok 17 - Triagem valida seleção única e explica ordem\n  ---\n  duration_ms: 0.230418\n  type: 'test'\n  ...\n# Subtest: Vacinação preserva população e orçamento fictícios\nok 18 - Vacinação preserva população e orçamento fictícios\n  ---\n  duration_ms: 0.213212\n  type: 'test'\n  ...\n# Subtest: Gestão limita recursos e produz consequência\nok 19 - Gestão limita recursos e produz consequência\n  ---\n  duration_ms: 0.130757\n  type: 'test'\n  ...\n1..19\n# tests 19\n# suites 0\n# pass 19\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 176.909672\n\n"
-        },
-        "check": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 check\n> astro check\n\n\u001b[2m10:38:24\u001b[22m \u001b[34m[types]\u001b[39m Generated \u001b[2m70ms\u001b[22m\n\u001b[2m10:38:24\u001b[22m \u001b[34m[check]\u001b[39m Getting diagnostics for Astro files in /tmp/elo-final-5ea6793ca2aef1a847cdc7c4b04f55efdf2d5b37...\n\u001b[96mtests/simulations.test.mjs\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m112\u001b[0m - \u001b[93mwarning\u001b[0m\u001b[90m ts(6133): \u001b[0m'pathLength' is declared but its value is never read.\n\n\u001b[7m3\u001b[0m import {nodes,edges,edgeKey,route,createRun,dispatch,tick,obstruct,selectHospital,assessTriage,campaign,manage,pathLength} from '../src/features/simulations/engine.mjs';\n\u001b[7m \u001b[0m \u001b[93m                                                                                                               ~~~~~~~~~~\u001b[0m\n\nResult (26 files): \n- 0 errors\n- 0 warnings\n- 1 hint\n\n\n"
-        },
-        "build": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 build\n> astro build\n\n\u001b[2m10:38:27\u001b[22m \u001b[34m[types]\u001b[39m Generated \u001b[2m34ms\u001b[22m\n\u001b[2m10:38:27\u001b[22m \u001b[34m[build]\u001b[39m output: \u001b[34m\"static\"\u001b[39m\n\u001b[2m10:38:27\u001b[22m \u001b[34m[build]\u001b[39m mode: \u001b[34m\"static\"\u001b[39m\n\u001b[2m10:38:27\u001b[22m \u001b[34m[build]\u001b[39m directory: \u001b[34m/tmp/elo-final-5ea6793ca2aef1a847cdc7c4b04f55efdf2d5b37/dist/\u001b[39m\n\u001b[2m10:38:27\u001b[22m \u001b[34m[build]\u001b[39m Collecting build info...\n\u001b[2m10:38:27\u001b[22m \u001b[34m[build]\u001b[39m \u001b[32m✓ Completed in 66ms.\u001b[39m\n\u001b[2m10:38:27\u001b[22m \u001b[34m[build]\u001b[39m Building static entrypoints...\n\u001b[2m10:38:27\u001b[22m \u001b[34m[vite]\u001b[39m \u001b[32m✓ built in 99ms\u001b[39m\n\u001b[33m\u001b[1m10:38:27\u001b[22m [WARN] [vite]\u001b[39m \u001b[33m[plugin builtin:vite-reporter] \n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001b[39m\n\u001b[2m10:38:27\u001b[22m \u001b[34m[vite]\u001b[39m \u001b[32m✓ built in 103ms\u001b[39m\n\u001b[2m10:38:27\u001b[22m \u001b[34m[build]\u001b[39m Rearranging server assets...\n\n\u001b[42m\u001b[30m generating static routes \u001b[39m\u001b[49m\n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/404.html\u001b[22m \u001b[2m(+9ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/atividades/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/emergencias/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/triagem/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/vacinacao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/gestao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/agendamento/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/corpo-clinico/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/contato/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital-3d/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/projeto/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/saude-publica/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/ciencia/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/sus/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/prevencao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/vacinas/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/desinformacao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/referencias/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/sobre/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/especialidades/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/servicos/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/estrutura/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:27\u001b[22m \u001b[32m✓ Completed in 54ms.\n\u001b[39m\n\u001b[2m10:38:27\u001b[22m \u001b[34m[build]\u001b[39m \u001b[32m✓ Completed in 286ms.\u001b[39m\n\u001b[2m10:38:27\u001b[22m \u001b[34m[build]\u001b[39m 25 page(s) built in \u001b[1m353ms\u001b[22m\n\u001b[2m10:38:27\u001b[22m \u001b[34m[build]\u001b[39m \u001b[1mComplete!\u001b[22m\n\n"
-        },
-        "audit": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "25 arquivos HTML: caminhos locais verificados.\nGLB preservado byte a byte; caminho-base presente na pagina compilada. HTTP e WebGL exigem teste em navegador.\n\n"
-        }
-      },
-      "routes": [
-        {
-          "path": "/elo-ciencias/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/projeto/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/especialidades/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital-3d/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/emergencias/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/triagem/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/vacinacao/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/gestao/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/atividades/",
-          "present": true
-        }
-      ],
-      "preserved": {
-        "public/models/hospital.glb": true,
-        "src/features/hospital3d": true,
-        "src/pages/hospital-3d": true
-      },
-      "previousRuns": [
-        {
-          "id": 42325314375,
-          "name": "Revisao sem publicacao",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/datashowbvc/elo-ciencias/actions/runs/42325314375",
-          "headSha": "5ea6793ca2aef1a847cdc7c4b04f55efdf2d5b37"
-        },
-        {
-          "id": 42325314236,
-          "name": "pages build and deployment",
-          "status": "completed",
-          "conclusion": "failure",
-          "url": "https://github.com/datashowbvc/elo-ciencias/actions/runs/42325314236",
-          "headSha": "5ea6793ca2aef1a847cdc7c4b04f55efdf2d5b37"
-        }
-      ],
-      "passed": true
+      "path": "/elo-ciencias/saude-publica/",
+      "present": true
     },
     {
-      "sha": "7d485b20f4690d37bef5eb91f5bad3d64171785f",
-      "checks": {
-        "checkout": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "HEAD is now at 7d485b2 style: refina identidade visual, legibilidade e painéis responsivos\n\nPreparing worktree (detached HEAD 7d485b2)\n"
-        },
-        "install": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\nadded 282 packages in 3s\n\n"
-        },
-        "tests": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 test\n> node --test tests/*.test.mjs\n\nTAP version 13\n# Subtest: Base estatica multipagina\nok 1 - Base estatica multipagina\n  ---\n  duration_ms: 0.520276\n  type: 'test'\n  ...\n# Subtest: Workflow nao publica\nok 2 - Workflow nao publica\n  ---\n  duration_ms: 0.203097\n  type: 'test'\n  ...\n# Subtest: Dependencias revisadas\nok 3 - Dependencias revisadas\n  ---\n  duration_ms: 0.13252\n  type: 'test'\n  ...\n# Subtest: Three e addons usam mesmo pacote fixado\nok 4 - Three e addons usam mesmo pacote fixado\n  ---\n  duration_ms: 0.834771\n  type: 'test'\n  ...\n# Subtest: Rota própria evita duplicação e respeita base\nok 5 - Rota própria evita duplicação e respeita base\n  ---\n  duration_ms: 0.230699\n  type: 'test'\n  ...\n# Subtest: Seleção não altera materiais originais e pontos permanecem vazios\nok 6 - Seleção não altera materiais originais e pontos permanecem vazios\n  ---\n  duration_ms: 0.27115\n  type: 'test'\n  ...\n# Subtest: GLB real existe e possui cabeçalho coerente\nok 7 - GLB real existe e possui cabeçalho coerente\n  ---\n  duration_ms: 2.976996\n  type: 'test'\n  ...\n# Subtest: Simulação de agendamento não coleta dados pessoais ou envia requisições\nok 8 - Simulação de agendamento não coleta dados pessoais ou envia requisições\n  ---\n  duration_ms: 0.762461\n  type: 'test'\n  ...\n# Subtest: Rotas antigas preservadas e atividades em página independente\nok 9 - Rotas antigas preservadas e atividades em página independente\n  ---\n  duration_ms: 0.297088\n  type: 'test'\n  ...\n# Subtest: Navegação distingue áreas e simulações\nok 10 - Navegação distingue áreas e simulações\n  ---\n  duration_ms: 0.15938\n  type: 'test'\n  ...\n# Subtest: Acabamento respeita movimento reduzido e largura móvel\nok 11 - Acabamento respeita movimento reduzido e largura móvel\n  ---\n  duration_ms: 0.77517\n  type: 'test'\n  ...\n# Subtest: Rotas usam somente ruas conectadas e respeitam bloqueios\nok 12 - Rotas usam somente ruas conectadas e respeitam bloqueios\n  ---\n  duration_ms: 89.672659\n  type: 'test'\n  ...\n# Subtest: Central percorre ocorrência, atendimento, transporte e relatório\nok 13 - Central percorre ocorrência, atendimento, transporte e relatório\n  ---\n  duration_ms: 2.664103\n  type: 'test'\n  ...\n# Subtest: Congestionamento muda velocidade e semáforo provoca espera\nok 14 - Congestionamento muda velocidade e semáforo provoca espera\n  ---\n  duration_ms: 0.652055\n  type: 'test'\n  ...\n# Subtest: Desvio não teletransporta a ambulância\nok 15 - Desvio não teletransporta a ambulância\n  ---\n  duration_ms: 1.048904\n  type: 'test'\n  ...\n# Subtest: Pausa e encerramento não avançam estado; reinício é independente\nok 16 - Pausa e encerramento não avançam estado; reinício é independente\n  ---\n  duration_ms: 1.100582\n  type: 'test'\n  ...\n# Subtest: Triagem valida seleção única e explica ordem\nok 17 - Triagem valida seleção única e explica ordem\n  ---\n  duration_ms: 0.29806\n  type: 'test'\n  ...\n# Subtest: Vacinação preserva população e orçamento fictícios\nok 18 - Vacinação preserva população e orçamento fictícios\n  ---\n  duration_ms: 0.296898\n  type: 'test'\n  ...\n# Subtest: Gestão limita recursos e produz consequência\nok 19 - Gestão limita recursos e produz consequência\n  ---\n  duration_ms: 0.209306\n  type: 'test'\n  ...\n1..19\n# tests 19\n# suites 0\n# pass 19\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 177.277343\n\n"
-        },
-        "check": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 check\n> astro check\n\n\u001b[2m10:38:31\u001b[22m \u001b[34m[types]\u001b[39m Generated \u001b[2m68ms\u001b[22m\n\u001b[2m10:38:31\u001b[22m \u001b[34m[check]\u001b[39m Getting diagnostics for Astro files in /tmp/elo-final-7d485b20f4690d37bef5eb91f5bad3d64171785f...\n\u001b[96mtests/simulations.test.mjs\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m112\u001b[0m - \u001b[93mwarning\u001b[0m\u001b[90m ts(6133): \u001b[0m'pathLength' is declared but its value is never read.\n\n\u001b[7m3\u001b[0m import {nodes,edges,edgeKey,route,createRun,dispatch,tick,obstruct,selectHospital,assessTriage,campaign,manage,pathLength} from '../src/features/simulations/engine.mjs';\n\u001b[7m \u001b[0m \u001b[93m                                                                                                               ~~~~~~~~~~\u001b[0m\n\nResult (27 files): \n- 0 errors\n- 0 warnings\n- 1 hint\n\n\n"
-        },
-        "build": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "\n> elo-ciencias@0.1.0 build\n> astro build\n\n\u001b[2m10:38:34\u001b[22m \u001b[34m[types]\u001b[39m Generated \u001b[2m30ms\u001b[22m\n\u001b[2m10:38:34\u001b[22m \u001b[34m[build]\u001b[39m output: \u001b[34m\"static\"\u001b[39m\n\u001b[2m10:38:34\u001b[22m \u001b[34m[build]\u001b[39m mode: \u001b[34m\"static\"\u001b[39m\n\u001b[2m10:38:34\u001b[22m \u001b[34m[build]\u001b[39m directory: \u001b[34m/tmp/elo-final-7d485b20f4690d37bef5eb91f5bad3d64171785f/dist/\u001b[39m\n\u001b[2m10:38:34\u001b[22m \u001b[34m[build]\u001b[39m Collecting build info...\n\u001b[2m10:38:34\u001b[22m \u001b[34m[build]\u001b[39m \u001b[32m✓ Completed in 64ms.\u001b[39m\n\u001b[2m10:38:34\u001b[22m \u001b[34m[build]\u001b[39m Building static entrypoints...\n\u001b[2m10:38:34\u001b[22m \u001b[34m[vite]\u001b[39m \u001b[32m✓ built in 98ms\u001b[39m\n\u001b[33m\u001b[1m10:38:34\u001b[22m [WARN] [vite]\u001b[39m \u001b[33m[plugin builtin:vite-reporter] \n(!) Some chunks are larger than 500 kB after minification. Consider:\n- Using dynamic import() to code-split the application\n- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\u001b[39m\n\u001b[2m10:38:34\u001b[22m \u001b[34m[vite]\u001b[39m \u001b[32m✓ built in 121ms\u001b[39m\n\u001b[2m10:38:34\u001b[22m \u001b[34m[build]\u001b[39m Rearranging server assets...\n\n\u001b[42m\u001b[30m generating static routes \u001b[39m\u001b[49m\n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/404.html\u001b[22m \u001b[2m(+9ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/atividades/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/emergencias/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/triagem/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/vacinacao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/gestao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/simulacoes/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/agendamento/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/corpo-clinico/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/contato/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital-3d/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/index.html\u001b[22m \u001b[2m(+2ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/projeto/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/saude-publica/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/ciencia/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/sus/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/prevencao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/vacinas/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/desinformacao/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/referencias/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/sobre/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/especialidades/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/servicos/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m   \u001b[34m├─\u001b[39m \u001b[2m/hospital/estrutura/index.html\u001b[22m \u001b[2m(+1ms)\u001b[22m \n\u001b[2m10:38:34\u001b[22m \u001b[32m✓ Completed in 53ms.\n\u001b[39m\n\u001b[2m10:38:34\u001b[22m \u001b[34m[build]\u001b[39m \u001b[32m✓ Completed in 302ms.\u001b[39m\n\u001b[2m10:38:34\u001b[22m \u001b[34m[build]\u001b[39m 25 page(s) built in \u001b[1m366ms\u001b[22m\n\u001b[2m10:38:34\u001b[22m \u001b[34m[build]\u001b[39m \u001b[1mComplete!\u001b[22m\n\n"
-        },
-        "audit": {
-          "passed": true,
-          "exitCode": 0,
-          "output": "25 arquivos HTML: caminhos locais verificados.\nGLB preservado byte a byte; caminho-base presente na pagina compilada. HTTP e WebGL exigem teste em navegador.\n\n"
-        }
-      },
-      "routes": [
-        {
-          "path": "/elo-ciencias/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/projeto/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/especialidades/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital-3d/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/emergencias/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/triagem/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/vacinacao/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/simulacoes/gestao/",
-          "present": true
-        },
-        {
-          "path": "/elo-ciencias/hospital/atividades/",
-          "present": true
-        }
-      ],
-      "preserved": {
-        "public/models/hospital.glb": true,
-        "src/features/hospital3d": true,
-        "src/pages/hospital-3d": true
-      },
-      "historyError": "Histórico não consultado para esta revisão.",
-      "passed": true
+      "path": "/elo-ciencias/ciencia/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/sus/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/vacinas/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/prevencao/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/desinformacao/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/referencias/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/solicitacoes/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/exames/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/marcar-exames/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/resultados/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/localizacao/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/contato/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/sos/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital-3d/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital-3d/hospital/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital-3d/cirurgia/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital-3d/recepcao/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/atividades/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/simulacoes/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/simulacoes/emergencias/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/simulacoes/triagem/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/simulacoes/vacinacao/",
+      "present": true
+    },
+    {
+      "path": "/elo-ciencias/hospital/simulacoes/gestao/",
+      "present": true
     }
   ],
-  "passed": true
+  "browser": {
+    "status": "completed",
+    "checks": [
+      {
+        "name": "Home: três acessos, equipe e navegação",
+        "passed": true
+      },
+      {
+        "name": "Todas as rotas respondem HTTP 200",
+        "passed": true
+      },
+      {
+        "name": "Agendar, navegar e cancelar solicitação demonstrativa",
+        "passed": true
+      },
+      {
+        "name": "Resultado ilustrativo abre e fecha",
+        "passed": true
+      },
+      {
+        "name": "Galeria não carrega visualizadores simultâneos",
+        "passed": true
+      },
+      {
+        "name": "GLB carrega no WebGL e mantém controles e seleção",
+        "passed": true
+      },
+      {
+        "name": "Cada ambiente Sketchfab tem exatamente um iframe responsivo",
+        "passed": true
+      },
+      {
+        "name": "SOS: despacho, pausa, atendimento, transporte e conclusão em navegador",
+        "passed": true
+      },
+      {
+        "name": "Responsividade e menu móvel em 320, 390 e 1440 pixels",
+        "passed": true
+      },
+      {
+        "name": "Movimento reduzido mantém conteúdo visível",
+        "passed": true
+      }
+    ],
+    "networkMode": "OSM tiles blocked in automation; Leaflet supplied locally at the same pinned version. SOS uses recorded live OSRM responses if available, otherwise explicit test fixtures.",
+    "external": {
+      "routing": {
+        "passed": true,
+        "geometryPoints": [
+          13,
+          23
+        ],
+        "note": "Real OSRM response for one predefined occurrence; not a guarantee of future availability."
+      },
+      "471eca7cc5fc4285bc733b6ca847abd6": {
+        "httpAccessible": true,
+        "renderingVerified": false
+      },
+      "09f863957c494e45871a629a1f258cff": {
+        "httpAccessible": true,
+        "renderingVerified": false
+      }
+    },
+    "screenshots": [
+      "validation-screenshots/home-desktop.png",
+      "validation-screenshots/hospital-requests.png",
+      "validation-screenshots/models-gallery.png",
+      "validation-screenshots/hospital-glb.png",
+      "validation-screenshots/home-mobile.png"
+    ],
+    "sosDataSource": "recorded_live_OSRM",
+    "passed": true
+  },
+  "corePassed": true,
+  "passed": true,
+  "htmlCount": 34,
+  "externalHttpReady": true
 }
